@@ -26,6 +26,13 @@
     "mysql2": "^2.2.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "nodemon": "^2.0.6"
+  },
+  "keywords": [
+    "Projeto",
+    "Quadro",
+    "de",
+    "Avisos",
+    "(PWII)"
+  ]
 }
