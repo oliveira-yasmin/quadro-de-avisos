@@ -1,0 +1,40 @@
+<!-- Incluir o head -->
+<%- include('./partials/head') %>
+
+  <body>
+    <!-- Menu -->
+    <%- include('./partials/navbar') %>
+
+    <div class="container">
+      <% avisos.forEach(aviso => { %>
+        <br>
+        <div class="card shadow">
+          <div class="card-header gradient-purple text-white p-4 pl-5 d-flex align-items-center justify-content-between">
+            <h2><i class="far fa-paper-plane"></i> <%= aviso.titulo %> </h2>
+            <h2 class="lead"> <%= moment(aviso.data).format("DD/MM/YYYY") %> </h2>
+          </div>
+
+          <div class="card-body p-5">
+            <!-- info perfil -->
+            <div class="d-flex align-items-center">
+              <img src="img/liceu.jpg" class="img-thumbnail rounded-circle" width="60">
+
+              <div class="ml-2">
+                <div class="font-weight-bold"> ETEC João Belarmino </div>
+                <div class="text-secondary"> <%= moment(aviso.data, "YYYYMMDD").fromNow(); %> </div>
+              </div>
+            </div>
+
+            <!-- descrição do aviso -->
+            <div class="mt-4">
+              <%= aviso.mensagem %> 
+            </div>
+          </div> <!-- card-body -->
+        </div> <!-- card -->
+      <% }) %>
+    </div> <!-- caontainer -->
+
+    <!-- Incluir o script do bootstrap -->
+    <%- include('./partials/scripts_import') %> 
+  </body>
+</html>

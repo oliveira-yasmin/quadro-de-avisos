@@ -6,9 +6,9 @@
     <%- include('./partials/navbar') %>
 
     <div class="container">
-      <br><br>
+      <br>
 
-      <a href="#"><i class="fas fa-arrow-left"></i> Voltar</a>
+      <a href="/"><i class="fas fa-arrow-left"></i> Voltar</a>
       <br>
 
       <div class="card shadow">
@@ -43,10 +43,13 @@
                   <td> <%= aviso.titulo %> </td>
                   <td> <%= moment(aviso.data).format("DD/MM/YYYY") %> </td>
                   <td>
-                    <button class="btn btn-secondary" data-bs-toggle="modal" 
+                    <%= aviso.mensagem %> 
+                    <div class="float-right float-down">
+                      <button class="btn btn-purple text-white" data-bs-toggle="modal" 
                             data-bs-target="#excluirModal" 
                             onclick="excluir(event, '<%= aviso.ID_avisos %>')"> Excluir </button>
-                    <a href="/avisos/editar/<%= aviso.ID_avisos %>" class="btn btn-primary"> Alterar </a>
+                    <a href="/avisos/editar/<%= aviso.ID_avisos %>" class="btn bg-purple text-white"> Alterar </a>
+                    </div>
                   </td>
                 </tr>
               <% }) %>
